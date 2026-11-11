@@ -1,0 +1,69 @@
+{
+  "name": "dsh-tts",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness TTS: read assistant answers aloud with neural voices (edge-tts), offline SAPI fallback, per-message and auto-read controls, fixed or automatic reading language (pt-BR / en-US).",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-modules",
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-theme",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "src",
+    "cordis.patch.yml",
+    "runtime",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "sync": "node ../../scripts/sync.mjs --package dsh-tts",
+    "check": "node --check lib/index.js && node --check lib/client.js",
+    "test": "node --check lib/index.js && node --check lib/client.js",
+    "prepack": "node ../../scripts/sync.mjs --package dsh-tts"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "text-to-speech",
+    "tts",
+    "edge-tts",
+    "sapi",
+    "read-aloud",
+    "voice",
+    "pt-BR",
+    "en-US"
+  ],
+  "author": "dgadelha1",
+  "license": "MIT",
+  "homepage": "https://github.com/dgadelha1/dhs-stt-tts/tree/main/packages/dsh-tts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dgadelha1/dhs-stt-tts.git",
+    "directory": "packages/dsh-tts"
+  },
+  "bugs": {
+    "url": "https://github.com/dgadelha1/dhs-stt-tts/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+

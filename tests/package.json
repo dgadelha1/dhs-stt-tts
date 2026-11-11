@@ -1,0 +1,23 @@
+{
+  "name": "dsh-voice-suite-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Harness de QA (smoke cliente, servidor RPC e E2E) do DSH Voice Suite. Não é publicado.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check": "node check-syntax.mjs",
+    "smoke": "node smoke-client.mjs",
+    "server": "node server.mjs",
+    "e2e": "node e2e.mjs",
+    "ci": "node check-syntax.mjs && node smoke-client.mjs && node server.mjs",
+    "all": "pwsh -NoProfile -File run-all.ps1"
+  },
+  "dependencies": {
+    "puppeteer-core": "^24.10.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}

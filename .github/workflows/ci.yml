@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: testes (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    env:
+      NODE_ENV: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node 22 + cache npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: tests/package-lock.json
+
+      - name: Instalar dependências de teste
+        working-directory: tests
+        run: npm ci --no-audit --no-fund
+
+      - name: Verificar src/ sincronizado com lib/
+        run: node scripts/sync.mjs --check
+
+      - name: Sintaxe de todos os .js/.mjs
+        run: node tests/check-syntax.mjs
+
+      - name: Smoke dos bundles cliente (vm + React SSR)
+        run: node tests/smoke-client.mjs
+
+      - name: Servidor RPC (contrato, validação, proto-pollution)
+        run: node tests/server.mjs
+
+      - name: Publicar relatórios de QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-reports-${{ matrix.os }}
+          path: |
+            tests/artifacts/*.json
+            tests/artifacts/*.md
+          if-no-files-found: ignore

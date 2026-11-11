@@ -1,0 +1,4 @@
+node_modules/
+artifacts/
+*.log
+npm-debug.log*

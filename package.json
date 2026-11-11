@@ -1,0 +1,44 @@
+{
+  "name": "dsh-voice-suite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DSH Voice Suite — Whisper STT + neural TTS plugins for DeepSeek Harness (pt-BR / en-US).",
+  "type": "module",
+  "license": "MIT",
+  "author": "dgadelha1",
+  "homepage": "https://github.com/dgadelha1/dhs-stt-tts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dgadelha1/dhs-stt-tts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dgadelha1/dhs-stt-tts/issues"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "whisper",
+    "speech-to-text",
+    "text-to-speech",
+    "edge-tts",
+    "pt-BR",
+    "en-US",
+    "voice"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "check": "node scripts/sync.mjs --check",
+    "test": "pwsh -NoProfile -ExecutionPolicy Bypass -File tests/run-all.ps1",
+    "setup": "pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/setup-runtime.ps1",
+    "install:plugins": "pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/install.ps1",
+    "dev": "pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/dev-server.ps1",
+    "e2e": "node tests/e2e.mjs"
+  }
+}
+

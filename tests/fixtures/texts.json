@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "description": "Manifesto de fixtures de QA do DSH Voice Suite. Fonte única de verdade para os WAVs de STT (gerados por make-fixtures.ps1 via System.Speech offline) e para os textos de TTS. Textos em PT-BR e EN-US. Editar aqui e rodar tests/fixtures/make-fixtures.ps1 -Force para regenerar.",
+  "fixtures": {
+    "pt-br": {
+      "file": "pt-br.wav",
+      "lang": "pt",
+      "locale": "pt-BR",
+      "culture": "pt-BR",
+      "sapiVoice": "Microsoft Maria Desktop",
+      "sapiRate": -1,
+      "text": "Teste de ditado em português, um dois três.",
+      "requireGroups": [
+        ["teste"],
+        ["ditado"],
+        ["portugues", "português"],
+        ["dois", "três", "tres"]
+      ],
+      "minGroups": 3
+    },
+    "en-us": {
+      "file": "en-us.wav",
+      "lang": "en",
+      "locale": "en-US",
+      "culture": "en-US",
+      "sapiVoice": "Microsoft Zira Desktop",
+      "sapiRate": -1,
+      "text": "English dictation test, one two three.",
+      "requireGroups": [
+        ["english"],
+        ["dictation"],
+        ["test"],
+        ["one", "two", "three"]
+      ],
+      "minGroups": 3
+    }
+  },
+  "tts": {
+    "pt-BR": {
+      "preferredVoice": "pt-BR-FranciscaNeural",
+      "texts": [
+        "Olá! Este é um teste de leitura em voz alta, em português do Brasil.",
+        "Um dois três, quatro cinco seis. O rato roeu a roupa do rei de Roma."
+      ],
+      "assert": {
+        "minBytes": 1024,
+        "mimePrefix": "audio/"
+      }
+    },
+    "en-US": {
+      "preferredVoice": "en-US-AriaNeural",
+      "texts": [
+        "Hello! This is a text to speech test in English.",
+        "One two three, four five six. The quick brown fox jumps over the lazy dog."
+      ],
+      "assert": {
+        "minBytes": 1024,
+        "mimePrefix": "audio/"
+      }
+    }
+  },
+  "sapiVoices": {
+    "pt-BR": ["Microsoft Maria Desktop", "Microsoft Daniel"],
+    "en-US": ["Microsoft Zira Desktop"]
+  }
+}

@@ -1,0 +1,6 @@
+# dsh-whisper-stt bundle patch: inserts the local Whisper dictation plugin
+# (RPC channel /voice-stt; persistent faster-whisper worker in runtime/worker.py).
+# Row id is new, so this is a pure insert after the host rows.
+- insert:
+    - id: whisper-stt
+      name: 'dsh-whisper-stt'

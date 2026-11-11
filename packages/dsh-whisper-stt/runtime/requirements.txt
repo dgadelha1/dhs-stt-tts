@@ -1,0 +1,4 @@
+# dsh-whisper-stt Python runtime (installed into <stt-home>/venv by `prepare`).
+# faster-whisper pulls in ctranslate2, tokenizers, onnxruntime (Silero VAD) and
+# huggingface-hub. Pinned exactly so the venv is reproducible.
+faster-whisper==1.2.1

@@ -1,0 +1,27 @@
+node_modules/
+.npm-cache/
+.pnpm-store/
+
+# Local development reference (DSH asar extraction)
+.ref/
+.tmp-*/
+*.log
+
+# Internal development contract (not part of the public project)
+CONTRACT.md
+
+# Test artifacts and logs
+tests/artifacts/
+tests/node_modules/
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Packed packages
+*.tgz
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini

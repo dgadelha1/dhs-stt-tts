@@ -1,0 +1,26 @@
+# Normalização de finais de linha e diffs
+* text=auto
+
+# Scripts PowerShell e batch em CRLF (Windows)
+*.ps1 text eol=crlf
+*.psm1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Scripts shell e fontes em LF
+*.sh text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Binários
+*.wav binary
+*.mp3 binary
+*.png binary
+*.jpg binary
+*.ttf binary
+*.woff2 binary

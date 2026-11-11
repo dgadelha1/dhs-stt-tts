@@ -1,0 +1,5 @@
+# dsh-tts bundle patch: inserts the TTS server plugin (RPC channel /voice-tts).
+# Row id `tts` is new, so this is a pure insert after the shipped bundle rows.
+- insert:
+    - id: tts
+      name: 'dsh-tts'

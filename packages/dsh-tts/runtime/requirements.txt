@@ -1,0 +1,12 @@
+# dsh-tts Edge TTS runtime — pinned Python dependency.
+#
+# Installed by the plugin itself through the `prepare` RPC (venv + pip), or
+# manually with:
+#   <home>/tts/venv/Scripts/python.exe -m pip install -r requirements.txt
+#
+# `edge-tts` talks to the Microsoft Edge read-aloud neural voice service
+# (online). Everything that runs offline is the SAPI engine (System.Speech),
+# which needs no Python package at all.
+# 7.2.7 was published with an outdated DRM token and the Edge read-aloud
+# service answers 403; 7.3.1 fixes it (verified against the live service).
+edge-tts==7.3.1

@@ -1,0 +1,68 @@
+{
+  "name": "dsh-whisper-stt",
+  "version": "1.0.0",
+  "description": "Local Whisper dictation for the DeepSeek Harness composer: microphone button, on-device faster-whisper transcription (GPU with automatic CPU fallback), pt-BR/en-US UI.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-modules",
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-theme",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "src",
+    "cordis.patch.yml",
+    "runtime",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "sync": "node ../../scripts/sync.mjs --package dsh-whisper-stt",
+    "check": "node ../../scripts/sync.mjs --check --package dsh-whisper-stt",
+    "prepack": "node ../../scripts/sync.mjs --package dsh-whisper-stt",
+    "test": "node --check src/index.js && node --check src/client.js && node ../../scripts/sync.mjs --check --package dsh-whisper-stt"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "whisper",
+    "speech-to-text",
+    "dictation",
+    "faster-whisper",
+    "voice",
+    "pt-BR",
+    "en-US"
+  ],
+  "author": "dgadelha1",
+  "license": "MIT",
+  "homepage": "https://github.com/dgadelha1/dhs-stt-tts/tree/main/packages/dsh-whisper-stt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dgadelha1/dhs-stt-tts.git",
+    "directory": "packages/dsh-whisper-stt"
+  },
+  "bugs": {
+    "url": "https://github.com/dgadelha1/dhs-stt-tts/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+

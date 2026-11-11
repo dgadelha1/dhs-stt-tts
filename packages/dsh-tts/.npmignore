@@ -1,0 +1,5 @@
+# Development artefacts never shipped in the plugin tarball.
+.dev/
+__pycache__/
+*.pyc
+*.log
