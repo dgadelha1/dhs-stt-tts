@@ -18,7 +18,7 @@ próprio computador e insere o texto no campo de mensagem. Interface em
 ## Instalação
 
 Requisitos: DSH `0.2.2-rc.1`, Windows 10/11 e Python 3.10–3.12. A partir da raiz do
-repositório **dsh-voice-suite**:
+repositório **dhs-stt-tts**:
 
 ```powershell
 # instala só este plugin no profile (app Desktop = desktop)
@@ -215,4 +215,5 @@ toca em nada fora desse diretório.
 ## Licença
 
 MIT.
+
 

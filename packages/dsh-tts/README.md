@@ -63,7 +63,7 @@ se persistir, o plugin cai automaticamente para o SAPI.
 ## Instalação
 
 Requisitos: DSH `0.2.2-rc.1`, Windows 10/11 e Python 3.10–3.12. A partir da raiz do
-repositório **dsh-voice-suite**:
+repositório **dhs-stt-tts**:
 
 ```powershell
 dsh plugin --profile <profile> add -w .\packages\dsh-tts
@@ -333,3 +333,4 @@ service; SAPI and the browser engine run locally. The RPC channel is
 ## Licença
 
 MIT — veja [`LICENSE`](./LICENSE).
+

@@ -30,7 +30,7 @@ Guia completo para instalar os plugins **`dsh-whisper-stt`** (ditado com Whisper
 
 ```powershell
 git clone https://github.com/dgadelha1/dhs-stt-tts.git
-cd dsh-voice-suite
+cd dhs-stt-tts
 
 # 1) Runtime local: venvs (faster-whisper + edge-tts) e modelo Whisper
 pwsh -File scripts\setup-runtime.ps1
@@ -205,4 +205,5 @@ Reinicie o app. Para apagar venvs/modelos/cache: remova `%USERPROFILE%\.dsh\dsh-
 - TTS neural (`edge`) envia o texto ao serviço da Microsoft; escolha `SAPI` para uso offline.
 - Nenhum endpoint aceita caminhos de arquivo do navegador; o texto do TTS chega ao PowerShell por arquivo UTF‑8.
 - Os plugins não coletam telemetria.
+
 

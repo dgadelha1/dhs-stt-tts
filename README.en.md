@@ -74,7 +74,7 @@
 
 ```powershell
 git clone https://github.com/dgadelha1/dhs-stt-tts.git
-cd dsh-voice-suite
+cd dhs-stt-tts
 
 # 1) local dependencies (venvs + Whisper model)
 pwsh -File scripts\setup-runtime.ps1
@@ -237,4 +237,5 @@ MIT — © 2026 **dgadelha1**. See [LICENSE](LICENSE).
 Unofficial project, not affiliated with DeepSeek. “DeepSeek” and “DeepSeek Harness” belong to
 their respective owners. Whisper is an open model by OpenAI; neural voices are provided by the
 Microsoft Edge read-aloud service.
+
 
