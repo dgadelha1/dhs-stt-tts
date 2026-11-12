@@ -3,6 +3,7 @@
 **Dois plugins independentes para o [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness): ditado por voz com Whisper local e leitura neural das respostas.** Integrados à GUI web, funcionando com **português (BR)** e **inglês (US)** — e somente esses dois idiomas.
 
 [![licença](https://img.shields.io/badge/licen%C3%A7a-MIT-green)](LICENSE)
+[![CI](https://github.com/dgadelha1/dhs-stt-tts/actions/workflows/ci.yml/badge.svg)](https://github.com/dgadelha1/dhs-stt-tts/actions/workflows/ci.yml)
 [![DSH](https://img.shields.io/badge/DeepSeek%20Harness-0.2.2--rc.1-blue)](https://github.com/deepseek-ai/deepseek-harness)
 [![idiomas](https://img.shields.io/badge/idiomas-pt--BR%20%7C%20en--US-38bdf8)](docs/LANGUAGES.md)
 [![plataforma](https://img.shields.io/badge/plataforma-Windows%2010%2F11-informational)](#requisitos)
@@ -243,6 +244,7 @@ MIT — © 2026 **dgadelha1**. Veja [LICENSE](LICENSE).
 Projeto não oficial, sem vínculo com a DeepSeek. “DeepSeek” e “DeepSeek Harness” pertencem aos
 seus respectivos titulares. Whisper é um modelo aberto da OpenAI; as vozes neurais são
 fornecidas pelo serviço Microsoft Edge read-aloud.
+
 
 
 
