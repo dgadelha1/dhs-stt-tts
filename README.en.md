@@ -203,7 +203,7 @@ Full technical details: **[SPEC.md](SPEC.md)** (Portuguese).
 | Slow transcription | GPU not used (`cuDNN`/cuBLAS missing) → CPU. Use `small`/`base`, or rerun setup with CUDA. |
 | No audio in reading | `edge` voice needs network; switch to **SAPI** in Voice (TTS) or check volume/output. |
 | Reading the wrong language | Set a fixed **Reading language** in Voice (TTS) — see [docs/LANGUAGES.md](docs/LANGUAGES.md). |
-| Plugins missing after install | Boot composes bundles: restart the app (Desktop) or `dsh` CLI, then reload the page. |
+| Plugins missing after install | Boot composes bundles: restart the app (Desktop) or `dsh` CLI, then reload the page. The **Plugins page** builds its "Installed" list at boot — hot-apply already activates the features, but the list only appears after reloading/restarting. |
 | `ERR_PNPM_IGNORED_BUILDS` | Add `allowBuilds: {koffi: false}` to the profile `pnpm-workspace.yaml` (installer does it). |
 | Whisper model downloading again | The model lives in `%USERPROFILE%\.dsh\dsh-voice\stt\models`; deleting it re-downloads. |
 
@@ -237,5 +237,6 @@ MIT — © 2026 **dgadelha1**. See [LICENSE](LICENSE).
 Unofficial project, not affiliated with DeepSeek. “DeepSeek” and “DeepSeek Harness” belong to
 their respective owners. Whisper is an open model by OpenAI; neural voices are provided by the
 Microsoft Edge read-aloud service.
+
 
 

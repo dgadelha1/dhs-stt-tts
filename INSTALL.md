@@ -184,7 +184,7 @@ Reinicie o app. Para apagar venvs/modelos/cache: remova `%USERPROFILE%\.dsh\dsh-
 | Sintoma | Diagnóstico / solução |
 |---|---|
 | `add` falha com `ERR_PNPM_IGNORED_BUILDS` | Aplique `allowBuilds: {koffi: false}` no `pnpm-workspace.yaml` do profile (ver §3.1). |
-| Plugins não aparecem na GUI | O boot compõe os bundles: reinicie o app/CLI e recarregue a página. Confira com `plugin list`. |
+| Plugins não aparecem na GUI | O boot compõe os bundles: reinicie o app/CLI e recarregue a página. Confira com `plugin list`. A **aba Plug-ins** compõe a lista de instalados no boot: após instalar em runtime, recarregue/reinicie para vê-la (a instalação hot-apply já ativa as funções). |
 | Botão de microfone ausente | O cliente do plugin não carregou: veja o console do navegador (`Ctrl+Shift+I`) e `%USERPROFILE%\.dsh\dsh-voice\logs\`. |
 | Microfone pede permissão e falha | Permita microfone no Windows (Privacidade → Microfone) e no app. |
 | “Runtime não está pronto” | Configurações → Ditado por voz → **Preparar** (ou `setup-runtime.ps1`). |
@@ -205,5 +205,6 @@ Reinicie o app. Para apagar venvs/modelos/cache: remova `%USERPROFILE%\.dsh\dsh-
 - TTS neural (`edge`) envia o texto ao serviço da Microsoft; escolha `SAPI` para uso offline.
 - Nenhum endpoint aceita caminhos de arquivo do navegador; o texto do TTS chega ao PowerShell por arquivo UTF‑8.
 - Os plugins não coletam telemetria.
+
 
 
